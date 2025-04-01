@@ -43,9 +43,9 @@
     }
   },
   "variables": {
-    "logsFunctionAppName": "[concat('lm-logs','-',parameters('LM_Company_Name'), '-', replace(parameters('Azure_Region'),' ',''))]",
-    "eventhubNamespace": "[concat('lm-logs','-',parameters('LM_Company_Name'), '-', replace(parameters('Azure_Region'),' ',''))]",
-    "storage": "[toLower(concat(parameters('LM_Company_Name'), replace(parameters('Azure_Region'),' ','')))]",
+    "logsFunctionAppName": "ADC-LM-TEST-FNA",
+    "eventhubNamespace": "ADC-LM-TEST-EH",
+    "storage": "adclmtesting",
     "lmAppStorageAccounts": "[if(greater(length(variables('storage')) , 24), substring(variables('storage'), sub(length(variables('storage')) , 24), 24) , variables('storage'))]",
     "eventhubLogsName": "log-hub",
     "ConsumergroupsLogsName": "LMConsumerGroup",
@@ -154,7 +154,7 @@
             },
             {
               "name": "WEBSITE_RUN_FROM_PACKAGE",
-              "value": "[concat('https://github.com/logicmonitor/lm-logs-azure/raw/',parameters('sourceCodeBranch'),'/package/lm-logs-azure.zip')]"
+              "value": "[concat('https://github.com/jbakeer/lm-logs-azure/raw/',parameters('sourceCodeBranch'),'/package/lm-logs-azure.zip')]"
             },
             {
               "name": "AzureWebJobsStorage",

@@ -161,7 +161,7 @@ resource "azurerm_function_app" "lm_logs" {
   app_settings = {
     FUNCTIONS_WORKER_RUNTIME     = "java"
     FUNCTIONS_EXTENSION_VERSION  = "~3"
-    WEBSITE_RUN_FROM_PACKAGE     = "https://github.com/logicmonitor/lm-logs-azure/raw/master/package/lm-logs-azure.zip"
+    WEBSITE_RUN_FROM_PACKAGE     = "https://github.com/jbakeer/lm-logs-azure/raw/master/package/lm-logs-azure.zip"
     LogsEventHubConnectionString = azurerm_eventhub_authorization_rule.lm_logs_listener.primary_connection_string
     LogicMonitorCompanyName      = var.lm_company_name
     LogicMonitorAccessId         = var.lm_access_id
