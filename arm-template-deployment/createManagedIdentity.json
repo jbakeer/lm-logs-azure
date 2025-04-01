@@ -11,9 +11,9 @@
     }
   },
   "variables": {
-    "deploymentResourceGroupName": "[concat('lm-logs-',parameters('LM_Company_name'),'-', replace(parameters('resource_group_region'),' ',''), '-group')]",
+    "deploymentResourceGroupName": "RG_LOGICMONITOR_PREPOD",
     "identityDeploymentName": "deployment-assets-except-role-assignment",
-    "managedIdentityName": "[concat('msi-', variables('deploymentResourceGroupName'), '-deploy')]",
+    "managedIdentityName": "ADC-LM-TEST-MI",
     "managedIdentityId": "[concat('/subscriptions/', subscription().subscriptionId, '/resourceGroups/', variables('deploymentResourceGroupName'), '/providers/Microsoft.ManagedIdentity/userAssignedIdentities/', variables('managedIdentityName'))]",
     "bootstrapRoleAssignmentId": "[guid(subscription().id, variables('userAccessAdministratorRoleDefinitionId'),variables('managedIdentityId'))]",
     "contributorRoleAssignmentId": "[guid(subscription().id, variables('contributorRoleDefinitionId'),variables('managedIdentityId'))]",
