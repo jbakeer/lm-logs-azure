@@ -55,7 +55,7 @@ catch
     break
 }
 
-$targetResourceGroup = 'lm-logs-' + $lmCompanyName + '-' + $location + '-group'
+$targetResourceGroup = 'RG_Convene_PreProd'
 $eventhubNameSpace = $targetResourceGroup.replace('-group','')
 $eventhubName = 'log-hub'
 $eventhubAuthorizationId = 'RootManageSharedAccessKey'
